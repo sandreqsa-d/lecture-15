@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
-import Ul from "./Ul";
+import AddButton from "./AddBtn.jsx";
+import Ul from "./Ul.jsx";
 
 const Task1 = () => {
   const [text, setText] = useState("");
@@ -8,12 +8,13 @@ const Task1 = () => {
 
   return (
     <div>
-      <input 
-        value={text} 
-        onChange={(e) => setText(e.target.value)} 
-      />
-      <Button text={text} setTodos={setTodos} todos={todos} />
       <Ul todos={todos} />
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <AddButton text={text} setTodos={setTodos} todos={todos} />
+
     </div>
   );
 };
