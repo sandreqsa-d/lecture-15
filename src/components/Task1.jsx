@@ -13,7 +13,10 @@ const Task1 = () => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <AddButton text={text} setTodos={setTodos} todos={todos} />
+      <AddButton text={text}
+        setText={setText}
+        todos={todos}
+        setTodos={setTodos} />
 
     </div>
   );

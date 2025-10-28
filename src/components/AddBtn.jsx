@@ -1,13 +1,17 @@
 import React from "react";
 
-const addButton = ({ text, todos, setTodos, btnName }) => {
+const AddButton = ({ text, todos, setTodos, setText }) => {
     function addTodo() {
         if (todos.length >= 5) {
             alert("გეყოფა 5. არაა მეტი საჭირო");
             return;
         }
-        setTodos(todos.concat(text))
+        if (text.trim() === "") { return }
+        setTodos(todos.concat(text));
+        setText("");
     }
+
+
     function removeTodo() {
         if (todos.length === 0) {
             alert("სია ცარიელია")
@@ -28,4 +32,4 @@ const addButton = ({ text, todos, setTodos, btnName }) => {
     )
 };
 
-export default addButton;
+export default AddButton;
